@@ -42,6 +42,9 @@ RUN buildDeps='git alpine-sdk openssl-dev libwebsockets-dev c-ares-dev util-linu
     apk del $buildDeps && rm -rf /var/cache/apk/*
 
 ADD mosquitto.conf /etc/mosquitto/mosquitto.conf
+ADD ./mqtt/server.crt /etc/mosquitto/server.crt
+ADD ./mqtt/server.key /etc/mosquitto/server.key
+ADD ./mqtt/ca.crt /etc/mosquitto/ca.crt
 
 ENTRYPOINT ["/run.sh"]
 CMD ["mosquitto"]
