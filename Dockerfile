@@ -1,9 +1,6 @@
 FROM alpine:3.4
 
-EXPOSE 1883
-EXPOSE 8883
-EXPOSE 8884
-EXPOSE 9883
+EXPOSE 8080
 
 VOLUME ["/var/lib/mosquitto", "/etc/mosquitto", "/etc/mosquitto.d"]
 
